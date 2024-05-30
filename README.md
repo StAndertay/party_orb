@@ -1,12 +1,18 @@
-# 2016-01-27 party_orb code (JT)
+# Party Orb
 
-I have modified the non-relativistic code of Paolo Guiliani and others (documented in Guiliani et al. ApJ 635:pp636-646, 2005) to be relativistic, use a range of input environments and use simple Makefile.
+Solves the guiding centre equations of particle orbit behaviour (including relativistic and non-relativistic versions) based on a specific electromagnetic environment.
 
-See manual (./manual/) for full details of source code and IDL widgets.
+## Description
 
-Careful on the Makefile flags:
-On my machine (oldjock.mcs.st-and.ac.uk) code compiles against older version of gfortran (gfortran44). 
-Several debugging options have also been commented out - including these can severly slow down run-time.
+Project based on earlier work carried out by Solar and Magnetospheric Theory Group at University of St Andrews by previous authors. Has been used to study particle behaviour in a range of magnetic and solar-related environments, including magnetic separators, active region simulations, analytical magnetic sturctures, magnetic nulls, collapsing magnetic traps and braking jets. 
+
+## Getting Started
+
+### Dependencies
+
+Requires fortran compilers, MPI installation (only required to read specific data file formats). Tested on Linux and Mac OSX operating systems.
+
+### Installing
 
 To prepare the code for use, type "make" in the root directory.
 This creates several additional directories:
@@ -15,23 +21,56 @@ This creates several additional directories:
 ./obj/	::	location of *.o files
 ./bin/	::	binary file location
 
-(the contents of these folders are ignored by git as some will contain binary info or large datafiles)
+Be careful to use the correct makefile flags, to align correctly with installed fortran compiler. Full details available in the code manual, found in the manual subdirectory (./manual/).
 
-To run the code, simply type "./bin/rparty" on the command line (for the relativistic version).
+### Executing program
 
-"make clean" 	removes all these extra directories ready for recompilation.
-"make datatidy"	deletes all the files in the ./Data/ directory.
+To run the relativistic version of the code, type 
+```
+./bin/rparty
+```
+on the command line. The initial particle conditions are set up in the "newinput.dat" file. The "global_mod.f90" file contains key definitions: the type of field, and location and number of any MHD/code snapshots used as a background field are specified at the beginning of this file. Setting FMOD='test' in this file will run a simple analytical magnetic field model for the particles to act on.
 
-The manual also details how to switch between setups. Sorry, you'll have to compile the pdf file yourself though.
+"make clean" removes all these extra directories ready for recompilation.
+"make datatidy" deletes all the files in the ./Data/ directory.
 
-To load lots of useful IDL routines to process the data, load the Start.pro file on starting IDL, with the command
-idl Start.pro
+Orbit code data was formatted to be read in by IDL. The Start.pro routine will link to many useful IDL functions and codes
 
-Oh, the remaining subfolders contain stuff carried over from previous experiments, following the work of P. Giuliani, K. Grady, S. Oskoui, T. Neukirch, and perhaps others.
-./text/	contains snippets of other peoples work, which I'm just holding onto for now in case they become important later.
-Neither folder is affected by the Makefile.
 
-2016 saw the addition of several plugins for different datafiles from Lare, in either 2D (but pretending to be 3D for the particles) or 3D data snapshots.
-These features are still being tested, and should NOT be taken for granted.
+## Help
 
-Good luck - any problems, email me at jwt9@st-andrews.ac.uk.. Ciao!
+More details on the code structure, makefile contents and algorithms implemented can be found in the manual, or by contacting the code authors.
+
+
+## Authors
+ 
+[Dr. James Threlfall](mailto:j.threlfall@abertay.ac.uk)
+[Prof. Thomas Neukirch](mailto:tn3@st-andrews.ac.uk)
+[Dr. Alexei Borissov](mailto:a.borissov@epcc.ed.ac.uk)
+[Kate Mowbray](mailto:jm380@st-andrews.ac.uk)
+
+With credit to earlier work carried out by Dr Solmaz Eradat Oskoui, Dr Keith Grady, Dr Paolo Guiliani, Dr Paul Wood and others.
+
+## Version History
+
+* 0.2
+    * Various bug fixes and optimizations
+    * See [commit change]() or See [release history]()
+* 0.1
+    * Initial Release
+
+## License
+
+This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+
+## Publication List
+
+Selected publications based on/using this code are listed below:
+* [Borissov et al. (2020), A&A, 635, 15 p., A63.](https://doi.org/10.1051/0004-6361/201936977)
+* [Threlfall et al. (2018) A&A, 611, A40](https://doi.org/10.1051/0004-6361/201731915)
+* [Borissov et al. (2017) A&A, 605, A73](http://dx.doi.org/10.1051/0004-6361/201731183)
+* [Threlfall et al. (2017) Sol. Phys., 292, 45T](http://dx.doi.org/10.1007/s11207-017-1060-0)
+* [Borissov et al. (2016) Sol. Phys., 291, 1385](http://dx.doi.org/10.1007/s11207-016-0915-0)
+* [Threlfall et al. (2016b) A&A, 587, A4](http://dx.doi.org/10.1051/0004-6361/201526657)
+* [Threlfall et al. (2016a) A&A, 585, A95](http://dx.doi.org/10.1051/0004-6361/201424366)
+* [Threlfall et al. (2015) A&A, 574A, 7T](http://dx.doi.org/10.1051/0004-6361/201424366)
