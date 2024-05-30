@@ -16,9 +16,13 @@ Requires fortran compilers, MPI installation (only required to read specific dat
 
 To prepare the code for use, type "make" in the root directory.
 This creates several additional directories:
+
 ./Data/	::	location of output data
+
 ./mod/	:: 	location of *.mod files
+
 ./obj/	::	location of *.o files
+
 ./bin/	::	binary file location
 
 Be careful to use the correct makefile flags, to align correctly with installed fortran compiler. Full details available in the code manual, found in the manual subdirectory (./manual/).
@@ -29,7 +33,14 @@ To run the relativistic version of the code, type
 ```
 ./bin/rparty
 ```
-on the command line. The initial particle conditions are set up in the "newinput.dat" file. The "global_mod.f90" file contains key definitions: the type of field, and location and number of any MHD/code snapshots used as a background field are specified at the beginning of this file. Setting FMOD='test' in this file will run a simple analytical magnetic field model for the particles to act on.
+on the command line. 
+The nonrelativistic version should run using the command
+```
+./bin/nrparty
+```
+(but the non-relativistic version has been depricated, so may contain bugs)
+
+The initial particle conditions are set up in the "newinput.dat" file. The "global_mod.f90" file contains key definitions: the type of field, and location and number of any MHD/code snapshots used as a background field are specified at the beginning of this file. Setting FMOD='test' in this file will run a simple analytical magnetic field model for the particles to act on.
 
 "make clean" removes all these extra directories ready for recompilation.
 "make datatidy" deletes all the files in the ./Data/ directory.
@@ -44,10 +55,10 @@ More details on the code structure, makefile contents and algorithms implemented
 
 ## Authors
  
-[Dr. James Threlfall](mailto:j.threlfall@abertay.ac.uk)
-[Prof. Thomas Neukirch](mailto:tn3@st-andrews.ac.uk)
-[Dr. Alexei Borissov](mailto:a.borissov@epcc.ed.ac.uk)
-[Kate Mowbray](mailto:jm380@st-andrews.ac.uk)
+*[Dr. James Threlfall](https://www.abertay.ac.uk/staff-search/dr-james-threlfall/) [email](mailto:j.threlfall@abertay.ac.uk)
+*[Prof. Thomas Neukirch](https://www.st-andrews.ac.uk/mathematics-statistics/people/tn3/)[email](mailto:tn3@st-andrews.ac.uk)
+*[Dr. Alexei Borissov](https://www.epcc.ed.ac.uk/about-us/our-team/alexei-borissov)[email](mailto:a.borissov@epcc.ed.ac.uk)
+*Kate Mowbray [email](mailto:jm380@st-andrews.ac.uk)
 
 With credit to earlier work carried out by Dr Solmaz Eradat Oskoui, Dr Keith Grady, Dr Paolo Guiliani, Dr Paul Wood and others.
 
