@@ -55,10 +55,10 @@ More details on the code structure, makefile contents and algorithms implemented
 
 ## Authors
  
-*[Dr. James Threlfall](https://www.abertay.ac.uk/staff-search/dr-james-threlfall/) [email](mailto:j.threlfall@abertay.ac.uk)
-*[Prof. Thomas Neukirch](https://www.st-andrews.ac.uk/mathematics-statistics/people/tn3/)[email](mailto:tn3@st-andrews.ac.uk)
-*[Dr. Alexei Borissov](https://www.epcc.ed.ac.uk/about-us/our-team/alexei-borissov)[email](mailto:a.borissov@epcc.ed.ac.uk)
-*Kate Mowbray [email](mailto:jm380@st-andrews.ac.uk)
+* [Dr. James Threlfall](https://www.abertay.ac.uk/staff-search/dr-james-threlfall/) [email](mailto:j.threlfall@abertay.ac.uk)
+* [Prof. Thomas Neukirch](https://www.st-andrews.ac.uk/mathematics-statistics/people/tn3/)[email](mailto:tn3@st-andrews.ac.uk)
+* [Dr. Alexei Borissov](https://www.epcc.ed.ac.uk/about-us/our-team/alexei-borissov)[email](mailto:a.borissov@epcc.ed.ac.uk)
+* Kate Mowbray [email](mailto:jm380@st-andrews.ac.uk)
 
 With credit to earlier work carried out by Dr Solmaz Eradat Oskoui, Dr Keith Grady, Dr Paolo Guiliani, Dr Paul Wood and others.
 
